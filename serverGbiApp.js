@@ -36,7 +36,7 @@ customerDetails = [
     gender: "Male",
     addressLine1: "New Ashok Nagar",
     state: "Uttar Pradesh",
-    city: " Lucknow ",
+    city: "Lucknow",
     dob: "7-August-1996",
     PAN: "AQSON7890T",
   },
@@ -45,7 +45,7 @@ customerDetails = [
     gender: "Female",
     addressLine1: "Sec-115",
     state: "Uttar Pradesh",
-    city: " Noida ",
+    city: "Noida",
     dob: "17-September-1994",
     PAN: "AQSDN7123T",
   },
@@ -63,7 +63,7 @@ customerDetails = [
     gender: "Female",
     addressLine1: "Sec-62",
     state: "Uttar Pradesh",
-    city: " Noida ",
+    city: "Noida",
     dob: "27-August-1989",
     PAN: "AQSONAS590T",
   },
@@ -1748,10 +1748,10 @@ app.get("/getChequeByName/:username", function (req, res) {
   });
   console.log(list);
 
-  let resArr = pagination(list, parseInt(req.query.page));
+  let resArr = pagination(list, parseInt(req.query.page || 1));
 
   res.json({
-    page: parseInt(req.query.page),
+    page: parseInt(req.query.page || 1),
     items: resArr,
     totalItems: resArr.length,
     totalNum: list.length,
