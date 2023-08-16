@@ -1561,7 +1561,6 @@ app.post("/register", function (req, res) {
 app.post("/login", function (req, res) {
   var name = req.body.name;
   var password = req.body.password;
-
   var cust = customers.find(function (item) {
     return item.name === name && item.password === password;
   });
